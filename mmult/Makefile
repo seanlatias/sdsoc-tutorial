@@ -59,6 +59,7 @@ DEPS := $(OBJECTS:.o=.d)
 .PHONY: all
 
 all: ${EXECUTABLE}
+	../setconfig.sh; \
 	cd sd_card; \
 	../../change_mac.sh ${MACADDRESS}
 

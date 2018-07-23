@@ -72,7 +72,7 @@ ${EXECUTABLE}: ${OBJECTS}
 -include ${DEPS}
 
 %.o: %.cpp
-	${CC} ${CFLAGS} $< -o $@
+	${CC} ${SDSFLAGS} ${CFLAGS} $< -o $@
 
 clean:
 	${RM} ${EXECUTABLE} ${OBJECTS} ${DEPS}

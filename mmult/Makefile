@@ -38,15 +38,15 @@
 APPSOURCES = mmult.cpp mmult_accel.cpp 
 EXECUTABLE = mmult.elf
 
-HLS_ONLY = -mno-bitstream -mno-boot-files
+HLSONLY = -mno-bitstream -mno-boot-files
 
 PLATFORM = zed
-SDSFLAGS = ${HLS_ONLY} -sds-pf ${PLATFORM} \
+SDSFLAGS = -sds-pf ${PLATFORM} \
 	-sds-hw mmult_accel mmult_accel.cpp -sds-end \
 	-poll-mode 1
 
 
-CC = sds++ ${SDSFLAGS}
+CC = sds++
 
 CFLAGS = -Wall -O3 -c
 CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
@@ -59,8 +59,11 @@ DEPS := $(OBJECTS:.o=.d)
 
 all: ${EXECUTABLE}
 
+hls: ${OBJECTS}
+	${CC} ${HLSONLY} ${SDSFLAGS} ${LFLAGS} ${OBJECTS} -o $@ 
+
 ${EXECUTABLE}: ${OBJECTS}
-	${CC} ${LFLAGS} ${OBJECTS} -o $@ 
+	${CC} ${SDSFLAGS} ${LFLAGS} ${OBJECTS} -o $@ 
 
 -include ${DEPS}
 
@@ -73,3 +76,4 @@ clean:
 ultraclean: clean
 	${RM} ${EXECUTABLE}.bit 
 	${RM} -rf _sds sd_card
+	${RM} hls hls.bit

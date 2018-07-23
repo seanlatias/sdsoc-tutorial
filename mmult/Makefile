@@ -45,12 +45,13 @@ SDSFLAGS = -sds-pf ${PLATFORM} \
 	-sds-hw mmult_accel mmult_accel.cpp -sds-end \
 	-poll-mode 1
 
-
 CC = sds++
 
 CFLAGS = -Wall -O3 -c
 CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 LFLAGS = -O3
+
+MACADDRESS = 00:0a:35:00:1e:51
 
 OBJECTS := $(APPSOURCES:.cpp=.o)
 DEPS := $(OBJECTS:.o=.d)
@@ -58,6 +59,8 @@ DEPS := $(OBJECTS:.o=.d)
 .PHONY: all
 
 all: ${EXECUTABLE}
+	cd sd_card; \
+	../../change_mac.sh ${MACADDRESS}
 
 hls: ${OBJECTS}
 	${CC} ${HLSONLY} ${SDSFLAGS} ${LFLAGS} ${OBJECTS} -o $@ 

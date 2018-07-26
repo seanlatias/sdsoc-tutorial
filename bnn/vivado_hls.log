@@ -1,0 +1,229 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2017.2
+  Build 1909853 on Wed Aug 23 11:51:38 MDT 2017
+  Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/opt/xilinx/Xilinx_SDx_2017.2_sdx_0823_1/SDx/2017.2/Vivado_HLS/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'xl722' on host 'en-ec-zhang-01.coecis.cornell.edu' (Linux_x86_64 version 2.6.32-696.23.1.el6.x86_64) on Tue Jul 24 10:30:44 EDT 2018
+INFO: [HLS 200-10] On os "CentOS release 6.10 (Final)"
+INFO: [HLS 200-10] In directory '/home/xl722/bnn_h'
+vivado_hls> exitclose_project bnn_h[19Dset_part zynq[K[13Dlist_part[K[9Dhelp[Kset_part[8Dopen_solution solution1[23Dadd_files -tb test_deepnn.cpp[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kopen_project bnn_h
+INFO: [HLS 200-10] Opening project '/home/xl722/bnn_h/bnn_h'.
+0
+vivado_hls> open_solution solution1
+INFO: [HLS 200-10] Opening solution '/home/xl722/bnn_h/bnn_h/solution1'.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-2'
+/home/xl722/bnn_h/bnn_h/vivado_hls.app
+vivado_hls> csynth_design 
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'deepnn.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:23 ; elapsed = 00:01:35 . Memory (MB): peak = 440.355 ; gain = 20.051 ; free physical = 1170 ; free virtual = 10189
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:29 ; elapsed = 00:01:41 . Memory (MB): peak = 440.355 ; gain = 20.051 ; free physical = 1149 ; free virtual = 10188
+INFO: [HLS 200-10] Starting code transformations ...
+ERROR: [SYNCHK 200-79] Cannot find the top function '-deadargelim' in the design. Possible causes are: (1) the top function name is misspelled; (2) the top function is nonexistent or declared as static.
+ERROR: [HLS 200-70] Synthesizability check failed.
+
+vivado_hls> set_top deepnn
+vivado_hls> set_top deepnn[14Dcsynth_design[K
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'deepnn.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:04:04 ; elapsed = 00:04:16 . Memory (MB): peak = 903.359 ; gain = 483.055 ; free physical = 814 ; free virtual = 9867
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:04:09 ; elapsed = 00:04:23 . Memory (MB): peak = 903.359 ; gain = 483.055 ; free physical = 813 ; free virtual = 9867
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:05:26 ; elapsed = 00:05:41 . Memory (MB): peak = 951.355 ; gain = 531.051 ; free physical = 2421 ; free virtual = 11482
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'if_mac' into 'conv_2d' (layer.cpp:56) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:05:27 ; elapsed = 00:05:42 . Memory (MB): peak = 951.355 ; gain = 531.051 ; free physical = 2425 ; free virtual = 11486
+INFO: [XFORM 203-602] Inlining function 'if_mac' into 'conv_2d' (layer.cpp:56) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:56:10) to (layer.cpp:55:28) in function 'conv_2d'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'pad' (layer.cpp:6)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_2d' (layer.cpp:36)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:05:28 ; elapsed = 00:05:44 . Memory (MB): peak = 951.355 ; gain = 531.051 ; free physical = 2399 ; free virtual = 11469
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:05:29 ; elapsed = 00:05:45 . Memory (MB): peak = 964.992 ; gain = 544.688 ; free physical = 2365 ; free virtual = 11437
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'deepnn' ...
+WARNING: [SYN 201-103] Legalizing function name 'pad.1' to 'pad_1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pad_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 345.21 seconds; current allocated memory: 16.319 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 16.319 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'batch_norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.67 seconds; current allocated memory: 16.319 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 16.319 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pad' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 16.319 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'deepnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 16.319 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.99 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pad_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pad_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'deepnn_faddfsub_32ns_32ns_32_4_full_dsp' to 'deepnn_faddfsub_3bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_fmul_32ns_32ns_32_3_max_dsp' to 'deepnn_fmul_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_sitofp_32ns_32_4' to 'deepnn_sitofp_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_fptrunc_64ns_32_1' to 'deepnn_fptrunc_64eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_fsqrt_32ns_32ns_32_10' to 'deepnn_fsqrt_32nsfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_ddiv_64ns_64ns_64_31' to 'deepnn_ddiv_64ns_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_sitodp_32ns_64_5' to 'deepnn_sitodp_32nhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_mul_mul_11ns_6ns_16_1' to 'deepnn_mul_mul_11ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_ama_addmuladd_5ns_11ns_6ns_5ns_16_1' to 'deepnn_ama_addmuljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_ama_addmuladd_5ns_10ns_7ns_5ns_15_1' to 'deepnn_ama_addmulkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'deepnn_ama_addmuljbC': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_ama_addmulkbM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_ddiv_64ns_g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_faddfsub_3bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fmul_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fptrunc_64eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fsqrt_32nsfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_mul_mul_11ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_sitodp_32nhbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_sitofp_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'batch_norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'deepnn_fadd_32ns_32ns_32_4_full_dsp' to 'deepnn_fadd_32ns_lbW' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'deepnn_fmul_32ns_cud' is changed to 'deepnn_fmul_32ns_cud_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'deepnn_fdiv_32ns_32ns_32_12' to 'deepnn_fdiv_32ns_mb6' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'deepnn_fptrunc_64eOg' is changed to 'deepnn_fptrunc_64eOg_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'deepnn_fpext_32ns_64_1' to 'deepnn_fpext_32nsncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_fcmp_32ns_32ns_1_1' to 'deepnn_fcmp_32ns_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_dadd_64ns_64ns_64_5_full_dsp' to 'deepnn_dadd_64ns_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'deepnn_dsqrt_64ns_64ns_64_30' to 'deepnn_dsqrt_64nsqcK' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'deepnn_ama_addmuljbC' is changed to 'deepnn_ama_addmuljbC_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'deepnn_ama_addmuljbC': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_dadd_64ns_pcA': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_dsqrt_64nsqcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fadd_32ns_lbW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fcmp_32ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fdiv_32ns_mb6': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fmul_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fpext_32nsncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_fptrunc_64eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'batch_norm'.
+INFO: [HLS 200-111]  Elapsed time: 1.11 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'deepnn_ama_addmuladd_10ns_4ns_4ns_4ns_14_1' to 'deepnn_ama_addmulrcU' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'deepnn_ama_addmuljbC' is changed to 'deepnn_ama_addmuljbC_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'deepnn_ama_addmuljbC': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'deepnn_ama_addmulrcU': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 1.78 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pad' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pad'.
+INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 16.319 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'deepnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'deepnn/x_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'deepnn/output_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'deepnn' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'deepnn'.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 16.319 MB.
+WARNING: [RTMG 210-274] Memory 'deepnn_w_conv1_V' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_w_conv1_V_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_miu1' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_miu1_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_sigma1' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_sigma1_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_gamma1' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_gamma1_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_beta1' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_beta1_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_w_conv2_V' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_w_conv2_V_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_miu2' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_miu2_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_sigma2' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_sigma2_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_gamma2' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_gamma2_rom' using block ROMs.
+WARNING: [RTMG 210-274] Memory 'deepnn_beta2' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'deepnn_beta2_rom' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'deepnn_mem_conv1_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'deepnn_mem_conv3_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:05:40 ; elapsed = 00:06:04 . Memory (MB): peak = 964.992 ; gain = 544.688 ; free physical = 2334 ; free virtual = 11417
+INFO: [SYSC 207-301] Generating SystemC RTL for deepnn.
+INFO: [VHDL 208-304] Generating VHDL RTL for deepnn.
+INFO: [VLOG 209-307] Generating Verilog RTL for deepnn.
+0
+vivado_hls> clos
+close          close_project  close_solution 
+[Kvivado_hls> close_project 
+vivado_hls> exit
+
+INFO: [HLS 200-112] Total elapsed time: 377.28 seconds; peak allocated memory: 16.319 MB.

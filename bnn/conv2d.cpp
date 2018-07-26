@@ -1,4 +1,5 @@
 #include "layer.h"
+#include "conv2d.h"
 
 inline bool if_mac(int x, int y, int I)
 {
@@ -35,15 +36,15 @@ void conv_2d(bit input[MAX_FMAP], int output[MAX_FMAP], int M, int N, int I, int
     output_holder[i] = 0;
   }
 
-  for (int n = 0; n < N; n++){
-    for (int m = 0; m < M; m++){
-      for (int x = 0; x < O; x++){
-        for (int y = 0; y < O; y++){
+  LOOP_N: for (int n = 0; n < N; n++){
+    LOOP_M: for (int m = 0; m < M; m++){
+      LOOP_X: for (int x = 0; x < O; x++){
+        LOOP_Y: for (int y = 0; y < O; y++){
           int one_out = 0;
           int mac_num = 0;
           int o_index = x + y * O + n * ofmap_size;
-          for (int c = 0; c < F; c++){
-            for (int r = 0; r < F; r++){
+          LOOP_C: for (int c = 0; c < F; c++){
+            LOOP_R: for (int r = 0; r < F; r++){
               if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
                 int i_index = x + c + (y + r) * I + m * ifmap_size;
                 int w_index = c + r * F + (n + m * N) * FILTER_SIZE;

@@ -38,11 +38,12 @@
 APPSOURCES = test_bnn.cpp bnn.cpp conv2d.cpp layer.cpp
 EXECUTABLE = bnn.elf
 
-HLSONLY = -mno-bitstream -mno-boot-files
+HLSONLY = -mno-bitstream -mno-boot-files -sdcard data
 
 PLATFORM = zed
 SDSFLAGS = -sds-pf ${PLATFORM} \
-	-sds-hw conv_2d layer.cpp -sds-end \
+	-sds-hw conv_2d conv2d.cpp -hls-tcl hls.tcl \
+  -clkid 2 -sds-end \
 	-poll-mode 1
 
 CC = sds++
@@ -85,4 +86,4 @@ clean:
 ultraclean: clean
 	${RM} ${EXECUTABLE}.bit 
 	${RM} -rf _sds sd_card
-	${RM} hls hls.bit
+	${RM} hls hls.bit; ${RM} bnn_sw

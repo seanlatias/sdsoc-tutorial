@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void bnn(bit input[I_WIDTH1*I_WIDTH1], float output[10]){
+void bnn(bit input[MAX_FMAP], float output[10]){
   bit mem_conv1[MAX_FMAP];
   bit mem_conv2[MAX_FMAP];
   int mem_conv3[MAX_FMAP];

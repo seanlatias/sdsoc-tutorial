@@ -40,7 +40,7 @@ int main(){
   
   for (int test = 0; test < TEST_SIZE; test++) {
 
-    bit input_image[I_WIDTH1*I_WIDTH1];
+    bit input_image[MAX_FMAP];
     float output[10];
 
     for (int i = 0; i < 784; i++)

@@ -38,7 +38,7 @@
 APPSOURCES = test_bnn.cpp bnn.cpp conv2d.cpp layer.cpp
 EXECUTABLE = bnn.elf
 
-HLSONLY = -mno-bitstream -mno-boot-files -sdcard data
+HLSONLY = -mno-bitstream -mno-boot-files
 
 PLATFORM = zed
 SDSFLAGS = -sds-pf ${PLATFORM} \
@@ -63,7 +63,8 @@ DEPS := $(OBJECTS:.o=.d)
 all: ${EXECUTABLE}
 	../setconfig.sh; \
 	cd sd_card; \
-	../../change_mac.sh ${MACADDRESS}
+	../../change_mac.sh ${MACADDRESS}; \
+  cp -r ../data .
 
 sw:
 	g++ -g -I/opt/Xilinx/Vivado/2018.1/include ${APPSOURCES} -o bnn_sw

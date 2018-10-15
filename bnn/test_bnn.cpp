@@ -3,7 +3,7 @@
 #include "bnn.h"
 using namespace std;
 
-const int TEST_SIZE = 500;
+const int TEST_SIZE = 100;
 
 void read_test_images(int8_t test_images[TEST_SIZE][256]) {
   std::ifstream infile("data/test_b.dat");

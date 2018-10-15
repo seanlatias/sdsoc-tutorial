@@ -9,11 +9,11 @@ const int O_WIDTH = 4; //conv output width
 const int F = 3; //filter width
 const int FILTER_SIZE = F*F;
 const int PADDING = F - 1;
-const int MAX_FMAP = 5184; //18*18*16
-const int MAX_F = 32; //{16, 32} num of conv2 output fmaps
-const int MAX_W_CONV = 4608;//3*3*16*32 num of conv2 weights
-const int FC1_UNITS = O_WIDTH*O_WIDTH * 32; //num of fc1 input units
-const int FC2_UNITS = 256;
+const int MAX_FMAP = 819200; //10*10*64*128
+const int MAX_F = 128; //{64, 128} num of conv2 output fmaps
+const int MAX_W_CONV = 73728;//3*3*64*128 num of conv2 weights
+const int FC1_UNITS = O_WIDTH*O_WIDTH * 128; //num of fc1 input units
+const int FC2_UNITS = 512;
 const int MAX_W_FC = FC1_UNITS*FC2_UNITS;
 const int OUT = 10;
 

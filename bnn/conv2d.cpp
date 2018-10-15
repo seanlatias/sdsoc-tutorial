@@ -30,13 +30,6 @@ void conv_2d(bit input[MAX_FMAP], int output[MAX_FMAP], int M, int N, int I, int
     #include"data/weight_0b"
   };
 
-  /*
-  for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) 
-      cout << w_conv1[i*3+j] << " ";
-    cout << endl;
-  }*/
-
   static const bit w_conv2[MAX_W_CONV] = {
     #include"data/weight_5b"
   };

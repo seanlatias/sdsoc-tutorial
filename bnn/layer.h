@@ -3,17 +3,17 @@
 
 #include"typedef.h"
 
-const int I_WIDTH1 = 28; //conv1 input width
-const int I_WIDTH2 = 14; //conv2 input width
-const int O_WIDTH = 7; //conv output width
-const int F = 5; //filter width
+const int I_WIDTH1 = 16; //conv1 input width
+const int I_WIDTH2 = 8; //conv2 input width
+const int O_WIDTH = 4; //conv output width
+const int F = 3; //filter width
 const int FILTER_SIZE = F*F;
 const int PADDING = F - 1;
-const int MAX_FMAP = 32768; //32*32*32
-const int MAX_F = 64; //{32, 64} num of conv2 output fmaps
-const int MAX_W_CONV = 51200;//5*5*32*64 num of conv2 weights
-const int FC1_UNITS = O_WIDTH*O_WIDTH * 64; //num of fc1 input units
-const int FC2_UNITS = 512;
+const int MAX_FMAP = 5184; //18*18*16
+const int MAX_F = 32; //{16, 32} num of conv2 output fmaps
+const int MAX_W_CONV = 4608;//3*3*16*32 num of conv2 weights
+const int FC1_UNITS = O_WIDTH*O_WIDTH * 32; //num of fc1 input units
+const int FC2_UNITS = 256;
 const int MAX_W_FC = FC1_UNITS*FC2_UNITS;
 const int OUT = 10;
 

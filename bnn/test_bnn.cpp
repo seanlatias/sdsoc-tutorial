@@ -1,14 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include "bnn.h"
+using namespace std;
 
-const int TEST_SIZE = 10;
+const int TEST_SIZE = 500;
 
-void read_test_images(int8_t test_images[TEST_SIZE][784]) {
+void read_test_images(int8_t test_images[TEST_SIZE][256]) {
   std::ifstream infile("data/test_b.dat");
   if (infile.is_open()) {
     for (int index = 0; index < TEST_SIZE; index++) {
-      for (int pixel = 0; pixel < 784; pixel++) {
+      for (int pixel = 0; pixel < 256; pixel++) {
         int i;
         infile >> i;
         test_images[index][pixel] = i;
@@ -31,7 +32,7 @@ void read_test_labels(int test_labels[TEST_SIZE]) {
 
 int main(){
 
-  int8_t test_images[TEST_SIZE][784];
+  int8_t test_images[TEST_SIZE][256];
   int test_labels[TEST_SIZE];
   read_test_images(test_images);
   read_test_labels(test_labels);
@@ -43,7 +44,7 @@ int main(){
     bit input_image[MAX_FMAP];
     float output[10];
 
-    for (int i = 0; i < 784; i++)
+    for (int i = 0; i < 256; i++)
       input_image[i] = test_images[test][i];
 
     bnn(input_image, output);
